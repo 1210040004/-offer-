@@ -1,4 +1,4 @@
-package 面试.Integer享元模式;
+package 面试.jvm.Integer享元模式;
 
 public class Solution {
     public static void main(String[] args) {

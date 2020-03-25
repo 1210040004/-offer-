@@ -1,4 +1,4 @@
-package 面试.volatile保证内存可见性;
+package 面试.并发.volatile保证内存可见性;
 
 public class T1 {
     volatile  int n = 0;
