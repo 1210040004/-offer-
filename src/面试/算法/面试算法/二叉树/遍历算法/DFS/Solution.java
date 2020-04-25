@@ -51,9 +51,6 @@ public class Solution {
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
-
-
-
     }
     // DFS
     public static void dfs(TreeNode root){

@@ -4,25 +4,63 @@ import java.math.BigInteger;
 
 public class Solution {
     public void reOrderArray(int[] array){
-
-    }
-    public static BigInteger getfab(int n ){
-        BigInteger first = new BigInteger("0");
-        BigInteger second = new BigInteger("1");
-        BigInteger third = new BigInteger("2");
-        for (int i = 0; i < n; i++) {
-            third = first.add(second);
-            first = second;
-            second =third;
-
+        if(array==null||array.length==0){
+            return;
         }
-        return third;
+        if(array.length==1){
+            return;
+        }
+        int i =0,j;
+        int len=array.length;
+        while(i<len){
+            // 找到第一个偶数
+            while(i<len&&array[i]%2==1){
+                i++;
+            }
+            // 找到偶数后第一个奇数
+            j=i+1;
+            while(j<len&&array[j]%2==0){
+                if (j == len - 1) {
+                    return;
+                }
+                j++;
+            }
+            // 如果两个都中断了，那么在i- j-1 之间的数据都是偶数，那么就让 i到j-1 之间的数往后移动
+            int temp=array[j];
 
-    }
-
-    public static void main(String[] args) {
-        for (int i = 0; i < 100; i++) {
-            System.out.println(getfab(i));
+            while (j > i) {
+                array[j] = array[j - 1];
+                j--;
+            }
+            array[i]=temp;
         }
     }
+    public void reOrderArray2(int[] array){
+        if (array== null || array.length==0 || array.length==1){
+            return;
+        }
+        int i =0 ;
+        int len = array.length;
+        while(i<len){
+            // 找到第一个偶数，
+            while(i<len && array[i]%2==1){
+                i++;
+            }
+            int j = i+1;
+            while(j<len && array[j]%2==0){
+                if (j==len-1){
+                    return;
+                }
+                j++;
+            }
+            //存在于 i 到 j-1之间的数都是偶数，需要移动位置
+            int temp = array[j];
+            while(j>i){
+                array[j]=array[j-1];
+                j--;
+            }
+            array[i]=temp;
+        }
+    }
+
 }

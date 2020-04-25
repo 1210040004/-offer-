@@ -1,4 +1,4 @@
-package 面试.算法.面试算法.BFS.按层打印;
+package 面试.算法.面试算法.BFS.result打印;
 
 public class Solution {
 //    public void printTree(BinaryNode<T> root){

@@ -1,32 +1,26 @@
-package 面试.算法.leetcode.Q5最长回文串;
+package 面试.算法.LeetCode.Q5最长回文串;
 
 public class Solution {
-private static int index, len;
-public static String longestPalindrome(String s) {
-        int n = s.length();
-        if (n<2){
-        return s;
+    int index=0,len=0;
+    public String longestPalindrome(String s) {
+        if (s.length()<2){
+            return s;
         }
-        for (int i = 0; i < s.length()-1; i++) {
-        Helper(s,i,i);
-        Helper(s,i,i+1);
+        for (int i = 0; i < s.length(); i++) {
+            Helper(s,i,i);
+            Helper(s,i,i+1);
         }
         return s.substring(index,index+len);
-        }
+    }
 
-private static void Helper(String s, int l, int r) {
-        while(l>=0 && r<s.length() && s.charAt(l) == s.charAt(r)){
-        l--;
-        r++;
-        }
-        if(len<r-l-1){
-        index = l+1;
-        len = r-l-1;
-        }
-        }
-    public static void main(String[] args) {
-        longestPalindrome("babad");
+    private void Helper(String s, int i, int j) {
+         while(i>=0 && j<=s.length()-1 && s.charAt(i)==s.charAt(j)){
+             i--;
+             j++;
+         }
+         if (j-i-1>len){
+             len = j-i-1;
+             index = i+1;
+         }
     }
 }
-
-

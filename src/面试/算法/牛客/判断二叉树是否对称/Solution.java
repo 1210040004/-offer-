@@ -41,4 +41,26 @@ public class Solution {
         }
         return true;
     }
+
+
+
+    boolean isSymmetrical3(TreeNode root)
+    {
+        if(root == null){
+            return true;
+        }
+        return isSymmertical3(root.left ,root.right);
+    }
+    private boolean isSymmertical3(TreeNode left ,TreeNode right){
+        if(left == null && right == null){
+            return true;
+        }
+        if(left == null || right  ==null){
+            return false;
+        }
+        if(left.val != right.val){
+            return false;
+        }
+        return isSymmertical3(left.left,right.right)&&isSymmertical3(left.right,right.left);
+    }
 }
