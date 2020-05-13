@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.判断回文排列;
+package 面试.算法.leetcode.判断回文排列;
 
 import java.util.Collection;
 import java.util.HashMap;

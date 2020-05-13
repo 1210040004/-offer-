@@ -1,39 +1,48 @@
 package 面试.算法.尚硅谷刷题.排序.快速排序;
 
-import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
 
 public class Solution {
-    public void quickSort(int[] arr,int left ,int right){
-        int l =left;
-        int r= right;
-        int pivot = arr[(left+right)/2];
+    public static void quickSort(int[] arr,int left ,int right){
+        if (arr == null || arr.length == 0) {
+            return;
+        }
+        if (left > right){
+            return;
+        }
+        int l  =left;
+        int r = right;
+        int key  = arr[left];
         while(l<r){
-            // 找到一个大于pivot的值
-            while(arr[l]<pivot){
+            while(l<r && arr[r] >= key){
+                r--;
+            }
+            while(l<r && arr[l] <= key){
                 l++;
             }
-            // 找到一个小玉pivot 的值
-            while(arr[r]>pivot){
-                r--;
+            if (l<r){
+                swap(arr,l,r);
             }
-            // 如果l>=r 成立，说明pivot 左右两边的值已经全部
-            // 小于等于pivot的值而右边全部大于等于pivot的值
-            if (l>=r){
-                break;
-            }
-            //
-            swap(arr,l,r);
-            // 交换完了如果发现arr[l]==pivot
-            if (arr[l]==pivot){
-                r--;
-            }
-
         }
+        arr[left] = arr[l];
+        arr[l] = key;
+        quickSort(arr,left,l-1);
+        quickSort(arr,l+1,right);
     }
 
-    private void swap(int[] arr, int l, int r) {
+    private static void swap(int[] arr, int l, int r) {
         int temp = arr[l];
         arr[l] =arr[r];
         arr[r]=temp;
+    }
+
+    public static void main(String[] args) {
+        int n =1000;
+        int[] arr= new int[1000];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i]= (int)(Math.random()*100);
+        }
+        System.out.println(arr.toString());
+        quickSort(arr,0,arr.length-1);
+        System.out.println(arr);
     }
 }

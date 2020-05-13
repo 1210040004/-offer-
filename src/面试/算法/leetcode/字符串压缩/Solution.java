@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.字符串压缩;
+package 面试.算法.leetcode.字符串压缩;
 
 public class Solution {
     public String compressString(String S) {

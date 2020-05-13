@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.Q5最长回文串;
+package 面试.算法.leetcode.Q5最长回文串;
 
 public class Solution {
     int index=0,len=0;

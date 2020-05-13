@@ -1,7 +1,7 @@
 package 面试.算法;
 
 public class TreeNode {
-    public int val = 0;
+    public int val;
     public TreeNode left = null;
     public TreeNode right = null;
 

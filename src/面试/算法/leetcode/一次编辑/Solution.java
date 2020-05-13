@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.一次编辑;
+package 面试.算法.leetcode.一次编辑;
 
 public class Solution {
     public  static boolean oneEditAway(String first, String second) {

@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.创建一颗最小高度的二叉树;
+package 面试.算法.leetcode.创建一颗最小高度的二叉树;
 
 import 面试.算法.TreeNode;
 

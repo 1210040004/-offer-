@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.字符串是否唯一;
+package 面试.算法.leetcode.字符串是否唯一;
 
 import java.util.HashSet;
 

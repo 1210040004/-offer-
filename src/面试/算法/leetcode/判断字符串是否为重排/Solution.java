@@ -1,4 +1,4 @@
-package 面试.算法.LeetCode.判断字符串是否为重排;
+package 面试.算法.leetcode.判断字符串是否为重排;
 
 import java.util.Arrays;
 
