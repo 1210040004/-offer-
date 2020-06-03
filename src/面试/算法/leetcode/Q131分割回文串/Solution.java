@@ -6,6 +6,7 @@ import java.util.List;
 public class Solution {
     List<List<String>> res = new ArrayList<>();
     public List<List<String>> partition(String s) {
-
+//        StringBuilder StringBuilder
+        return null;
     }
 }

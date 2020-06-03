@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-         if (preorder== null || inorder==null || preorder.length!=inorder.length){
+         if (preorder== null || inorder==null || preorder.length!=inorder.length || preorder.length == 0 || inorder.length == 0){
              return null;
          }
          TreeNode root = new TreeNode(preorder[0]);

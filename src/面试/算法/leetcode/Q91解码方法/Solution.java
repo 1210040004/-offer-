@@ -2,6 +2,9 @@ package 面试.算法.leetcode.Q91解码方法;
 
 public class Solution {
     public  static int numDecodings(String s) {
+        if (s.startsWith("0")){
+            return 0;
+        }
         int len = s.length();
         int[] arr = new int[len+1];
         if (s.length()==1 ) {
@@ -49,6 +52,6 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        numDecodings("226");
+        System.out.println(numDecodings("110"));
     }
 }

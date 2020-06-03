@@ -1,31 +1,9 @@
 package 面试.算法.面试算法.生产者消费者;
 
-import java.util.concurrent.locks.ReentrantLock;
-
+/**
+ * 生产者和消费者在同一时间内公用同一个存储空间，生产者往存储空间添加商品，消费者从存储空间取走产品
+ */
 public class Solution {
-    public static void main(String[] args) {
-        Ticket ticket= new Ticket();
-        new Thread(ticket,"T1").start();
-        new Thread(ticket,"T2").start();
-        new Thread(ticket,"T3").start();
-        new Thread(ticket,"T4").start();
+    //1阻塞队列
 
-    }
-    static class Ticket implements  Runnable{
-         int ticket = 100;
-         ReentrantLock lock = new ReentrantLock();
-        @Override
-        public void run() {
-            while(true){
-                try{
-                    lock.lock();
-                    if (ticket <1 ) break;
-                    System.out.println(Thread.currentThread().getName()+"正在售卖第"+ticket--+"张票");
-
-                }finally {
-                    lock.unlock();
-                }
-            }
-        }
-    }
 }

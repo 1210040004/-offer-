@@ -9,10 +9,10 @@ public class Solution {
     static  Thread t1 = null;
     static Thread t2 =null;
     static volatile int num = 1;
-    static volatile  char c='A';
+    static volatile  char c='1';
     public static void main(String[] args) {
         t1 =  new Thread(()->{
-            while (num<=26){
+            while (num<=9){
                 System.out.print(num++);
                 LockSupport.unpark(t2);
                 LockSupport.park();

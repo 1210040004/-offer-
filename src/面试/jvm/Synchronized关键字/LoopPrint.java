@@ -16,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 
 class ShareResource{
-    private int number =1 ;// A :1 ， B2 ，C3
+    private volatile int number =1 ;// A :1 ， B2 ，C3
     private Lock lock = new ReentrantLock();
     private Condition c1 = lock.newCondition();
     private Condition c2 = lock.newCondition();
