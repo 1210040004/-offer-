@@ -1,7 +1,7 @@
 package 面试.其他.枚举;
 
 public class Student {
-    private Student(){} // 私有化构造器
+    public Student(){} // 私有化构造器
     static enum Studenttype{
         Instance;
         private Student student;

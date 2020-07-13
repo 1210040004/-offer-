@@ -23,11 +23,9 @@ public class Solution {
             return;
         }
         for (int i = start; i < candidates.length; i++) {
-
             list.add(candidates[i]);
             process(i,candidates, target - candidates[i], list);
             list.remove(list.size()-1);
         }
-
     }
 }

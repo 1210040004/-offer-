@@ -1,9 +1,10 @@
 package 面试.算法.实习.帮雪婷做.pdd.多线程修改集合对象;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 
 public class Solution {
     static  volatile ArrayList<Integer> list = new ArrayList<>();
@@ -11,13 +12,17 @@ public class Solution {
         list.add(1);
         list.add(2);
         list.add(3);
-        new Thread(()->{
-            list.add(1);
-        },"线程1").start();
-        new Thread(()->{
-            list.remove(1);
-        },"线程2").start();
-        Map<Integer, Integer> integerIntegerMap = Collections.synchronizedMap(new HashMap<Integer, Integer>());
-
+        Set<String> all = new HashSet<String>();
+        all.add("hello");
+        all.add("world");
+        all.add("sina");
+        all.add("sohu");
+        Iterator<String> iter = all.iterator();
+        while (iter.hasNext()) {
+            String string = iter.next();
+            System.out.println(string);
+            all.remove("world");//删除当前的数据
+        }
+        System.out.println(all);
     }
 }

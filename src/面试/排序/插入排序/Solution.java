@@ -27,4 +27,14 @@ public class Solution {
         arr[j] = arr[i];
         arr[i] = temp;
     }
+
+    public static  void insertSort2(int[] arr){
+        for (int i = 1; i <arr.length; i++) {
+            for (int j = i; j <arr.length ; j++) {
+                if (arr[j]<arr[j-1]){
+                    swap(arr,j, j -1);
+                }
+            }
+        }
+    }
 }

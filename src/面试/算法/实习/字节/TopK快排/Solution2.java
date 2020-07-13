@@ -32,4 +32,7 @@ public class Solution2 {
         swap(nums,j,left);
         return  j;
     }
+
+    public static void main(String[] args) {
+    }
 }

@@ -19,30 +19,29 @@ import 面试.算法.牛客.链表中环的入口.ListNode;
  *
  * 当 k = 3 时，应当返回: 3->2->1->4->5
  *
- * 来源：力扣（LeetCode）
- * 链接：https://leetcode-cn.com/problems/reverse-nodes-in-k-group
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
-        ListNode pre = dummy;
-        ListNode end = dummy;
-
-        while (end.next != null) {
-            for (int i = 0; i < k && end != null; i++) end = end.next;
-            if (end == null) break;
-            ListNode start = pre.next;
-            ListNode next = end.next;
-            end.next = null;
-            pre.next = reverse(start);
-            start.next = next;
-            pre = start;
-            end = pre;
-        }
-        return dummy.next;
+       ListNode dummy = new ListNode(-1);
+       dummy.next = head;
+       ListNode pre = dummy;
+       ListNode end = dummy;
+       while(end.next!=null){
+           for (int i = 0; i < k && end!=null; i++) {
+               end = end.next;
+           }
+           if (end ==null){
+               break;
+           }
+           ListNode start = pre.next;
+           ListNode next = end.next;
+           end.next = null;
+           pre.next = reverse(start);
+           start.next = next;
+           pre = start;
+           end = start;
+       }
+       return dummy.next;
     }
 
     private ListNode reverse(ListNode head) {

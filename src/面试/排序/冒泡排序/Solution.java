@@ -24,7 +24,18 @@ public class Solution {
             arr[i] = (int)(Math.random()*100);
         }   System.out.println(Arrays.toString(arr));
         int[] temp= new int[10];
-        bubbleSort(arr);
+        bubbleSort2(arr);
         System.out.println(Arrays.toString(arr));
+    }
+
+
+    public static  void bubbleSort2(int[] arr){
+        for (int i = 0; i < arr.length-1; i++) {
+            for (int j = 0; j <arr.length-i-1 ; j++) {
+                if (arr[j]>arr[j+1]){
+                    swap(arr,j,j+1);
+                }
+            }
+        }
     }
 }

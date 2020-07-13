@@ -1,4 +1,4 @@
-package 面试.算法.leetcode.Q11盛水最多的容器;
+package 面试.算法.leetcode.Q11cur的容器;
 
 public class Solution {
     public int maxArea(int[] height) {

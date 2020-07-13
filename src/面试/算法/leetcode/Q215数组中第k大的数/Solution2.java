@@ -9,8 +9,7 @@ public class Solution2 {
             if (j == k) {
                 break;
             } else if (j < k) {
-                l = j + 1;
-            } else {
+             } else {
                 h = j - 1;
             }
         }
@@ -18,16 +17,36 @@ public class Solution2 {
     }
 
     private int partition(int[] a, int l, int h) {
-        int i = l, j = h + 1;
-        while (true) {
-            while (a[++i] < a[l] && i < h) ;
-            while (a[--j] > a[l] && j > l) ;
-            if (i >= j) {
-                break;
+       int i = l, j = h;
+       int pivot = a[i];
+       while(true){
+           while(a[j]>pivot && j>l){
+               j--;
+           }
+           while(a[i]<pivot && i<h){
+               i++;
+           }
+           if (i>=j){
+               break;
+           }
+           swap(a,i,j);
+       }
+       swap(a,i,l);
+       return i;
+    }
+    public int partition2(int[] nums, int left, int right) {
+        int pivot = nums[left];
+        int j = left;
+        for (int i = left + 1; i <= right; i++) {
+            if (nums[i] < pivot) {
+                // 小于 pivot 的元素都被交换到前面
+                j++;
+                swap(nums, j, i);
             }
-            swap(a, i, j);
         }
-        swap(a, l, j);
+        // 在之前遍历的过程中，满足 [left + 1, j] < pivot，并且 (j, i] >= pivot
+        swap(nums, j, left);
+        // 交换以后 [left, j - 1] < pivot, nums[j] = pivot, [j + 1, right] >= pivot
         return j;
     }
 

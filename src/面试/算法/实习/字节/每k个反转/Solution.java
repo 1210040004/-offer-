@@ -16,7 +16,7 @@ public class Solution {
         ListNode pre = dummy;
         ListNode end = dummy;
         while(end.next!=null){
-            for (int i = 0; i < k && end!=null; i++) {
+            for (int i = 0; i <+ k && end!=null; i++) {
                 end= end.next;
             }
             if (end == null) break;
@@ -26,7 +26,7 @@ public class Solution {
             pre.next = reverse(start);
             start.next= next;
             pre = start;
-            end = pre;
+            end = start;
         }
         return dummy.next;
     }
@@ -42,10 +42,4 @@ public class Solution {
         return pre;
     }
 
-    public static void main(String[] args) {
-            int i = 10 / 0;
-
-
-        System.out.println(1213);
-    }
 }
